@@ -21,16 +21,11 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "./assets/img",
-            },
-          },
-        ],
+        test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/img/[name][ext][query]",
+        },
       },
     ],
   },

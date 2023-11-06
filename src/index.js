@@ -52,7 +52,6 @@ function displayWord() {
   reset();
   createWord();
   scoreContainer.textContent = `Votre score: ${score}`;
-  console.log(selectedWord);
   for (let i = 0; i < selectedWord.length; i++) {
     const letterContainer = document.createElement("div");
     letterContainer.classList.add("letter");
@@ -97,7 +96,6 @@ function hangman(letter, selectedWord) {
       e.textContent = letter;
     }
   });
-  console.log(indices);
 }
 
 function handleTestedLetters(input) {
@@ -117,7 +115,6 @@ function handleInput(button) {
     handleTestedLetters(button);
     hangman(button, selectedWord);
   }
-  console.log(testedLetters);
 }
 
 newBtn.addEventListener("click", (e) => {
